@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  prom-node:
+    image: quay.io/prometheus/node-exporter
+    network_mode: "host"
+    pid: "host"
+    cap_add:
+      - SYS_TIME
+    volumes:
+      - /:/host:ro,rslave
